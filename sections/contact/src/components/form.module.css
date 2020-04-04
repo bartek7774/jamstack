@@ -1,0 +1,118 @@
+.form {
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  display: block;
+  maring: 0.75.rem;
+  max-width: 500px;
+  padding: 1rem;
+}
+
+.form.pending {
+  position: relative;
+}
+
+.form.pending::before {
+  background-color: white;
+  border-radius: 0.25rem;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  opacity: 0.75;
+}
+.form.pending::after {
+  position: absolute;
+  background: radial-gradient(rgba(0, 50, 255, 0), rgba(0, 50, 255, 0.75));
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  content: "";
+  left: calc(50% - 3rem);
+  top: calc(50% - 3rem);
+  animation: loading 1s infinite ease-out;
+}
+
+@keyframes loading {
+  from {
+    opacity: 1;
+    transform: scale(0.001);
+  }
+  to{
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.label,
+.input {
+  display: block;
+}
+
+.label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.input {
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  padding: 0.25rem;
+  width: 100%;
+}
+
+.button {
+  background: darkblue;
+  border: 1px solid darkblue;
+  border-radius: 0.25rem;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 1.25rem;
+}
+
+.success,
+.error {
+  border-radius: 0.25rem;
+  padding: 1rem;
+  display: block;
+  margin: 0.75rem auto;
+  max-width: 500px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.success {
+  background-color: rgba(0, 255, 0, 0.15);
+  color: #333;
+  border: 1px solid #0f0;
+}
+.error {
+  background-color: rgba(255, 0, 0, 0.15);
+  color: #333;
+  border: 1px solid #f00;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.actions > button {
+  flex: 0 1 45%;
+}
+.actions > button.reset {
+  background-color: #e22;
+  border: 1px solid red;
+}
+
+button.again {
+  background-color: #22f;
+  border: 1px solid blue;
+  margin: 10px auto;
+  padding: 5px;
+}
